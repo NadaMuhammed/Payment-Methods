@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="biometric_title">Biometric Login</string>
+    <string name="biometric_subtitle">Use your fingerprint to authenticate</string>
+    <string name="biometric_cancel">Cancel</string>
+    <string name="biometric_failure_title">Biometric Not Set Up</string>
+    <string name="biometric_failure_subtitle">You need to set up biometric authentication. Would you like to go to settings?</string>
+    <string name="go_to_settings">Go to Settings</string>
+</resources>

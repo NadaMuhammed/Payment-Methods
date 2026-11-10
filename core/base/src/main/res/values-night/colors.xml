@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark mode values for the semantic colors in values/colors.xml -->
+    <color name="color_primary">@color/white</color>
+    <color name="color_on_primary">@color/black</color>
+    <color name="color_primary_container">@color/dark_surface_variant</color>
+    <color name="color_on_primary_container">@color/white</color>
+    <color name="color_secondary">@color/gray_300</color>
+    <color name="color_on_secondary">@color/black</color>
+    <color name="color_background">@color/dark_background</color>
+    <color name="color_surface">@color/dark_surface</color>
+    <color name="color_surface_variant">@color/dark_surface_variant</color>
+    <color name="color_outline">@color/dark_outline</color>
+    <color name="color_outline_subtle">@color/dark_surface_variant</color>
+
+    <color name="text_primary">@color/white</color>
+    <color name="text_secondary">@color/dark_text_secondary</color>
+    <color name="text_hint">@color/dark_text_hint</color>
+    <color name="text_on_primary">@color/black</color>
+
+    <color name="color_error">@color/red_300</color>
+    <color name="color_error_container">@color/red_900</color>
+    <color name="color_success">@color/green_300</color>
+    <color name="color_success_container">@color/green_900</color>
+    <color name="color_accent">@color/gold_300</color>
+    <color name="color_on_accent">@color/black</color>
+</resources>

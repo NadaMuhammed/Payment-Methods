@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Payment-Methods"
 include(":externalCards")
+include(":core:base")

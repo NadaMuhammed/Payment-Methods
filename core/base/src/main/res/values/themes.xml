@@ -24,6 +24,12 @@
         <item name="android:textColorSecondary">@color/text_secondary</item>
         <item name="android:textColorHint">@color/text_hint</item>
 
+        <!--
+            Material 3 tints elevated surfaces (cards, sheets) with colorPrimary.
+            Our primary is black/white, which turns white cards gray, so it's turned off.
+        -->
+        <item name="elevationOverlayEnabled">false</item>
+
         <!-- Default font for every view -->
         <item name="android:fontFamily">@font/poppins</item>
         <item name="fontFamily">@font/poppins</item>

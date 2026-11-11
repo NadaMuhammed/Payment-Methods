@@ -27,23 +27,36 @@ abstract class BaseFragment<VB : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         binding.initializeUI()
-    }
 
-    override fun onResume() {
-        super.onResume()
+        // Called once per view. Listeners like addTextChangedListener would stack up
+        // if they were added again on every resume.
+        binding.registerListeners()
 
+        // Called once per view. Collect inside viewLifecycleOwner.repeatOnLifecycle(STARTED)
+        // so collection pauses in the background and stops when the view is destroyed.
         handleState()
 
         handleSideEffect()
+    }
 
-        binding.registerListeners()
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        // The fragment can outlive its view (e.g. in the back stack); don't keep the old views.
+        _binding = null
     }
 
     open fun VB.initializeUI() {}
 
     open fun VB.registerListeners() {}
 
+    /**
+     * Start collecting state here, using viewLifecycleOwner:
+     * viewLifecycleOwner.lifecycleScope.launch { viewLifecycleOwner.repeatOnLifecycle(STARTED) { ... } }
+     * Called once per view from onViewCreated.
+     */
     open fun handleState() {}
 
+    /** Start collecting side effects here, the same way as [handleState]. Called once per view from onViewCreated. */
     open fun handleSideEffect() {}
 }

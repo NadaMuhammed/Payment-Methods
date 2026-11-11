@@ -1,3 +1,5 @@
 <resources>
     <string name="card_number_title">Card Number</string>
+    <string name="card_number_mask">1234 1234 1234 1234</string>
+    <string name="add_card_details_title">Add Card Details</string>
 </resources>

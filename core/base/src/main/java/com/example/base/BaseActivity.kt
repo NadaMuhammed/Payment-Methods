@@ -19,11 +19,9 @@ abstract class BaseActivity<VB : ViewBinding>(
         setContentView(binding.root)
 
         binding.initializeUI()
-    }
 
-    override fun onResume() {
-        super.onResume()
-
+        // Called once. Collect inside repeatOnLifecycle(STARTED) so collection
+        // pauses in the background and resumes without adding duplicate collectors.
         handleState()
 
         handleSideEffect()
@@ -31,7 +29,9 @@ abstract class BaseActivity<VB : ViewBinding>(
 
     open fun VB.initializeUI() {}
 
+    /** Start collecting state here, inside lifecycleScope + repeatOnLifecycle. Called once from onCreate. */
     open fun handleState() {}
 
+    /** Start collecting side effects here, inside lifecycleScope + repeatOnLifecycle. Called once from onCreate. */
     open fun handleSideEffect() {}
 }

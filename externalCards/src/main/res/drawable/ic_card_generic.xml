@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Generic card: shown when the card brand isn't known yet.
+    Uses text_primary (black in light mode, white in dark mode).
+    The group scales the drawing to 70% around the center to leave padding inside the 40x28 box.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="28dp"
+    android:viewportWidth="40"
+    android:viewportHeight="28">
+    <group
+        android:pivotX="20"
+        android:pivotY="14"
+        android:scaleX="0.7"
+        android:scaleY="0.7">
+        <!-- Card outline -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M5,2.5H35A3.5,3.5 0,0 1,38.5 6V22A3.5,3.5 0,0 1,35 25.5H5A3.5,3.5 0,0 1,1.5 22V6A3.5,3.5 0,0 1,5 2.5Z"
+            android:strokeWidth="2"
+            android:strokeColor="@color/text_primary" />
+        <!-- Magnetic stripe -->
+        <path
+            android:fillColor="@color/text_primary"
+            android:pathData="M1.5,8H38.5V12.5H1.5Z" />
+        <!-- Number lines -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M6,19.5H15M18.5,19.5H23"
+            android:strokeWidth="2"
+            android:strokeColor="@color/text_primary"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

@@ -3,8 +3,9 @@
 
     <application>
         <activity
-            android:name=".AddCardDetailsActivity"
+            android:name=".add_card.presentation.AddCardDetailsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PaymentMethods"
             android:windowSoftInputMode="adjustResize" />
     </application>

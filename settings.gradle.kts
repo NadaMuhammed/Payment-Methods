@@ -25,3 +25,8 @@ dependencyResolutionManagement {
 rootProject.name = "Payment-Methods"
 include(":externalCards")
 include(":core:base")
+
+// Local test app (only included when the folder exists)
+if (file("app").exists()) {
+    include(":app")
+}

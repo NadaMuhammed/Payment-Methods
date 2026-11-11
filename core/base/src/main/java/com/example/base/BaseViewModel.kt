@@ -43,22 +43,20 @@ abstract class BaseViewModel<
         onLoading: ((Boolean) -> Unit)? = null,
         onSuccess: (T?) -> Unit,
         onError: (() -> Unit)? = null
-    ) {
-        viewModelScope.launch(Dispatchers.IO) {
-            onLoading?.invoke(true)
+    ) = viewModelScope.launch(Dispatchers.IO) {
+        onLoading?.invoke(true)
 
-            when (val result = useCase.invoke()) {
-                is BaseResult.BaseSuccess -> {
-                    onSuccess.invoke(result.data)
+        when (val result = useCase.invoke()) {
+            is BaseResult.BaseSuccess -> {
+                onSuccess.invoke(result.data)
 
-                    onLoading?.invoke(false)
-                }
+                onLoading?.invoke(false)
+            }
 
-                else -> {
-                    onError?.invoke()
+            else -> {
+                onError?.invoke()
 
-                    onLoading?.invoke(false)
-                }
+                onLoading?.invoke(false)
             }
         }
     }
